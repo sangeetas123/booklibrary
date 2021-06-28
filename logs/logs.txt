@@ -1,0 +1,21 @@
+2021/06/18 12:15:21 Application running in environment:  dev  and on port:  8082
+2021/06/18 12:23:39 Application running in environment:  dev  and on port:  8082
+2021/06/18 12:29:35 Application running in environment:  dev  and on port:  8082
+2021/06/18 12:31:08 Application running in environment:  dev  and on port:  8082
+2021/06/18 12:36:10 Application running in environment:  dev  and on port:  8082
+2021/06/18 12:37:31 Application running in environment:  dev  and on port:  8082
+2021/06/18 12:41:24 Application running in environment:  dev  and on port:  8082
+2021/06/18 18:33:10 Couldn't save the booklist, Err:  dial tcp: lookup redis: no such host
+2021/06/19 09:12:53 Application running in environment:  dev  and on port:  8082
+2021/06/19 09:14:07 Application running in environment:  dev  and on port:  8082
+2021/06/19 09:21:33 Application running in environment:  dev  and on port:  8082
+2021/06/19 09:25:47 Application running in environment:  dev  and on port:  8082
+{"level":"warning","msg":"The group's number increased tremendously!","number":122,"omg":true,"time":"2021-06-19T15:18:24+05:30"}
+{"level":"fatal","msg":"The ice breaks!","number":100,"omg":true,"time":"2021-06-19T15:18:24+05:30"}
+{"level":"warning","msg":"The group's number increased tremendously!","number":122,"omg":true,"time":"2021-06-19T15:18:45+05:30"}
+{"level":"fatal","msg":"The ice breaks!","number":100,"omg":true,"time":"2021-06-19T15:18:45+05:30"}
+2021/06/20 04:10:14 Application running in environment:  dev  and on port:  8082
+2021/06/20 09:48:12 Application running in environment:  dev  and on port:  8082
+2021/06/20 12:14:52 Application running in environment:  dev  and on port:  8082
+2021/06/20 13:23:06 Application running in environment:  dev  and on port:  8082
+2021/06/20 13:24:32 Application running in environment:  dev  and on port:  8082

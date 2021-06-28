@@ -1,0 +1,21 @@
+version: "3.9"  # compose format version, optional since v1.27.0
+services:
+  web:
+    build:
+      context: .
+      dockerfile: Dockerfile.dbg
+    ports:
+      - 8080:8082
+      - 2345:2345
+    security_opt:
+      - "seccomp:unconfined"
+    env_file:
+      - app.env
+    volumes:
+      - ./logs:/app/logs
+    links:
+      - redis
+  redis:
+    image: redis:alpine
+
+

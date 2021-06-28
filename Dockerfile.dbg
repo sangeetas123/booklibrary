@@ -1,0 +1,8 @@
+FROM golang:latest as builder
+WORKDIR /app
+ADD . /app/
+RUN go get github.com/go-delve/delve
+RUN go install github.com/go-delve/delve/cmd/dlv@latest
+RUN CGO_ENABLED=0 go build -o booklibrary
+
+CMD ["dlv", "--listen=:2345", "--headless=true", "--log-dest=log.txt", "--api-version=2", "--accept-multiclient", "exec", "./booklibrary"]

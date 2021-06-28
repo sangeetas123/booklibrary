@@ -1,0 +1,35 @@
+version: "3.9"  # compose format version, optional since v1.27.0
+services:
+  web:
+    build:
+      context: .
+    ports:
+      - 8080:8082
+    env_file:
+      - app.env
+    volumes:
+      - ./logs:/app/logs
+    links:
+      - redis
+    depends_on:
+      - redis
+
+  redis:
+    image: redis:alpine
+    depends_on:
+      - fluentd
+
+  fluentd:
+    container_name: fluentd
+    build:
+      context: .
+      dockerfile: ./fluentd/Dockerfile_fluentd
+    user: root
+    volumes:
+      - /var/lib/docker/containers:/fluentd/log/containers
+      - ./fluentd/fluent.conf:/fluentd/etc/fluent.conf
+      #- ./fluentd/output:/output/
+    logging:
+      driver: "local"
+
+
