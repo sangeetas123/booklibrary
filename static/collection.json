@@ -1,0 +1,23 @@
+{
+  "booklist": [
+  {
+  "id": 1,
+  "name": "Harry Potter and the Deathly Hallows",
+  "author": "J.K. Rowling",
+  "labels": "fiction",
+  "quantity": 3
+  }, {
+  "id": 2,
+  "name": "Digital Fortress",
+  "author": "Dan Brown",
+  "labels": "fiction",
+  "quantity": 5
+  }, {
+  "id": 3,
+  "name": "Sapiens: A brief history of humankind",
+  "author": "Yuval Noah Harari",
+  "labels": "non-fiction",
+  "quantity": 5
+  }
+  ]
+}
