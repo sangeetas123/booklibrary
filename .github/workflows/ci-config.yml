@@ -2,9 +2,9 @@ name: Go
 
 on:
   push:
-    branches: [ main ]
+    branches: [ main, sangeeta123-CI ]
   pull_request:
-    branches: [ main ]
+    branches: [ main, sangeeta123-CI ]
 
 jobs:
 
