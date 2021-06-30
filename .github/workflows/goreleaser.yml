@@ -50,6 +50,14 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       -
+        name: Build and push Docker image
+        uses: docker/build-push-action@ad44023a93711e3deb337508980b4b5e9bcdc5dc
+        with:
+          context: .
+          push: ${{ github.event_name != 'pull_request' }}
+          tags: ${{ secrets.DOCKER_HUB_USERNAME }}/booklibrary:${{ steps.vars.outputs.tag }}
+          labels: ${{ steps.meta.outputs.labels }}
+      -
         name: Clear
         if: always()
         run: rm -f ${HOME}/.docker/config.json
