@@ -26,7 +26,6 @@ func init() {
 }
 
 func main() {
-	// This is our main function
 	logging.AppLog.WriteLogsInfo("Application running in environment:",
 		map[string]interface{} {
 		"runtime_setup": viper.GetString("RUNTIME_SETUP"),
