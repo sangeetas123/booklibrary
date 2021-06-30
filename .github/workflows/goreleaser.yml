@@ -39,7 +39,7 @@ jobs:
         name: Set up Go
         uses: actions/setup-go@v2
         with:
-          go-version: 1.15
+          go-version: 1.16
       -
         name: Run GoReleaser
         uses: goreleaser/goreleaser-action@v2
@@ -55,7 +55,8 @@ jobs:
         with:
           context: .
           push: ${{ github.event_name != 'pull_request' }}
-          tags: ${{ secrets.DOCKER_HUB_USERNAME }}/booklibrary:${{ steps.vars.outputs.tag }}
+          run: echo "RELEASE_VERSION=${GITHUB_REF#refs/*/}" >> $GITHUB_ENV
+          tags: ${{ secrets.DOCKER_HUB_USERNAME }}/booklibrary:${{ env.RELEASE_VERSION }}
           labels: ${{ steps.meta.outputs.labels }}
       -
         name: Clear
