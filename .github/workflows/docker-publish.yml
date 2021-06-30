@@ -9,18 +9,16 @@ on:
   schedule:
     - cron: '34 22 * * *'
   push:
-    branches: [ main, sangeeta123-CI ]
+    branches: [ main ]
     # Publish semver tags as releases.
     tags: [ 'v*.*.*' ]
   pull_request:
-    branches: [ main, sangeeta123-CI ]
-
+    branches: [ main ]
 env:
   # Use docker.io for Docker Hub if empty
   REGISTRY: docker.io
   # github.repository as <account>/<repo>
-  IMAGE_NAME: ${{ singhsangeeta431/booklibrary }}
-
+  IMAGE_NAME: singhsangeeta431/booklibrary
 
 jobs:
   build:
@@ -41,8 +39,8 @@ jobs:
         uses: docker/login-action@28218f9b04b4f3f62068d7b6ce6ca5b26e35336c
         with:
           registry: ${{ env.REGISTRY }}
-          username: ${{ github.actor }}
-          password: ${{ secrets.GITHUB_TOKEN }}
+          username: ${{ secrets.DOCKER_HUB_USERNAME }}
+          password: ${{ secrets.DOCKER_HUB_ACCESS_TOKEN }}
 
       # Extract metadata (tags, labels) for Docker
       # https://github.com/docker/metadata-action
@@ -59,5 +57,5 @@ jobs:
         with:
           context: .
           push: ${{ github.event_name != 'pull_request' }}
-          tags: ${{ steps.meta.outputs.tags }}
+          tags: ${{ secrets.DOCKER_HUB_USERNAME }}/booklibrary:latest
           labels: ${{ steps.meta.outputs.labels }}
