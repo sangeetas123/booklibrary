@@ -2,8 +2,6 @@
 name: build_and_release
 
 on:
-  pull_request:
-    branches: [ main ]
   push:
     branches: [ main ]
 
