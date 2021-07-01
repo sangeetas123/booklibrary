@@ -4,9 +4,6 @@ name: goreleaser
 on:
   pull_request:
   push: 
-    branches:
-    - main 
-
 
 env:
   # Use docker.io for Docker Hub if empty
