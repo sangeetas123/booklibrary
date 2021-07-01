@@ -2,8 +2,8 @@ name: Docker Image CI
 
 on:
   push:
-    branches: 
-    -  main 
+    branches-ignore:
+    - sangeetas123-patch-1
     
 jobs:
 
