@@ -25,6 +25,7 @@ func init() {
 	util.InitializeRedis()
 }
 
+// The main function
 func main() {
 	logging.AppLog.WriteLogsInfo("Application running in environment:",
 		map[string]interface{} {
