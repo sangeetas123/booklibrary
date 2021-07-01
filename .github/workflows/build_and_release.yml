@@ -1,13 +1,11 @@
-# .github/workflows/goreleaser.yml
-name: goreleaser
+# .github/workflows/build_and_release.yml
+name: build_and_release
 
 on:
   pull_request:
-    branches:
-      - 'main'
+    branches: [ main ]
   push:
-    branches:
-      - 'main'
+    branches: [ main ]
 
 env:
   # Use docker.io for Docker Hub if empty
