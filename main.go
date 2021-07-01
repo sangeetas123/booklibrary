@@ -25,7 +25,7 @@ func init() {
 	util.InitializeRedis()
 }
 
-// The main function
+// The main function, it starts the http server
 func main() {
 	logging.AppLog.WriteLogsInfo("Application running in environment:",
 		map[string]interface{} {
