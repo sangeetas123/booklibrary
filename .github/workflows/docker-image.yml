@@ -4,6 +4,9 @@ on:
   push:
     branches-ignore:
     - sangeetas123-patch-1
+  pull_request:
+    branches-ignore:
+    - sangeetas123-patch-1
     
 jobs:
 
