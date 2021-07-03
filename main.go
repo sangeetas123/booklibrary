@@ -38,14 +38,21 @@ func main() {
 	router.Static("/static/", "./static")
 	router.LoadHTMLGlob("templates/*")
 
-	router.GET("/", func(c *gin.Context) {
+	/*router.GET("/", func(c *gin.Context) {
 		c.HTML(http.StatusOK, "index.html", nil)
-	})
+	})*/
 
+	router.GET("/", getHomepage)
 	router.GET("/collection", getCollection)
 
 	router.Run(viper.GetString("SERVER_ADDRESS") + ":" +
 		viper.GetString("APP_PORT"))
+}
+
+func getHomepage(c *gin.Context) {
+	c.HTML(http.StatusOK, "index.html", gin.H{
+		"count": util.GetBookList().GetCount(),
+	})
 }
 
 func getCollection(c *gin.Context) {

@@ -16,20 +16,20 @@ services:
 
   redis:
     image: redis:alpine
-    depends_on:
-      - fluentd
+  #  depends_on:
+  #    - fluentd
 
-  fluentd:
-    container_name: fluentd
-    build:
-      context: .
-      dockerfile: ./fluentd/Dockerfile_fluentd
-    user: root
-    volumes:
-      - /var/lib/docker/containers:/fluentd/log/containers
-      - ./fluentd/fluent.conf:/fluentd/etc/fluent.conf
-      #- ./fluentd/output:/output/
-    logging:
-      driver: "local"
+  #fluentd:
+  #  container_name: fluentd
+  #  build:
+  #    context: .
+  #   dockerfile: ./fluentd/Dockerfile_fluentd
+  # user: root
+  #  volumes:
+  #    - /var/lib/docker/containers:/fluentd/log/containers
+  #    - ./fluentd/fluent.conf:/fluentd/etc/fluent.conf
+  #    #- ./fluentd/output:/output/
+  #  logging:
+  #    driver: "local"
 
 
