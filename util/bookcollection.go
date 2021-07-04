@@ -20,6 +20,16 @@ type Collection struct {
 
 var BookCollection *Collection
 
+func (i Collection) GetCount() int {
+	booklist := i.BookList
+	count := 0
+	for  _, _ = range booklist {
+		count +=1
+	}
+
+	return count
+}
+
 func (i Collection) MarshalBinary() (data []byte, err error) {
 	bytes, err := json.Marshal(i)
 	return bytes, err
@@ -38,7 +48,7 @@ func LoadCollection(path string) (err error) {
 
 	err = viper.Unmarshal(&BookCollection)
 	if err != nil {
-		fmt.Println("Unable to decode into struct, %v", err)
+		fmt.Println("Unable to decode into struct", err)
 	}
 
 	return
